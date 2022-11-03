@@ -7,7 +7,7 @@
     tools:context=".MainActivityEliminar">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewEliminarA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Eliminar Articulo"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.063" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textViewIdE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.106" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewNomE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.257" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewTipoE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tipo"
@@ -55,7 +55,7 @@
         app:layout_constraintVertical_bias="0.528" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textViewDesE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Descripcion"
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.696" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/editTextNomE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.294" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal2"
+        android:id="@+id/editTextPriceE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
@@ -97,7 +97,7 @@
         app:layout_constraintVertical_bias="0.447" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/editTextTipoE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
@@ -112,7 +112,7 @@
         app:layout_constraintVertical_bias="0.575" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextIdE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -125,7 +125,7 @@
         app:layout_constraintVertical_bias="0.151" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/editTextDesE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
@@ -140,7 +140,7 @@
         app:layout_constraintVertical_bias="0.75" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonAutoCompleteE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="..."
@@ -152,7 +152,7 @@
         app:layout_constraintVertical_bias="0.152" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonModificarE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Eliminar"
@@ -164,7 +164,7 @@
         app:layout_constraintVertical_bias="0.846" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonCancelarE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancelar"
@@ -176,7 +176,7 @@
         app:layout_constraintVertical_bias="0.846" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewPriceE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Precio"
