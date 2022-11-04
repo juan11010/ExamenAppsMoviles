@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivityMenu extends AppCompatActivity {
 
-    TextView txtAdmin;
+    TextView txtUsr;
     Button btnSalir;
     Button btnCrear;
     Button btnModificar;
@@ -22,16 +22,17 @@ public class MainActivityMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        txtAdmin = findViewById(R.id.textViewAdmin);
+        txtUsr = findViewById(R.id.textViewAdmin);
         btnSalir = findViewById(R.id.buttonSalir);
         btnCrear = findViewById(R.id.buttonCrear);
         btnModificar = findViewById(R.id.buttonModificar);
         btnEliminar = findViewById(R.id.buttonEliminar);
         btnListar = findViewById(R.id.buttonListar);
 
-        String nom = getIntent().getStringExtra("dato");
-        String name = "Bienvenido \n" + nom;
-        txtAdmin.setText(name);
+        // TODO Hacer que funcione en todos los casos
+        String usr = getIntent().getStringExtra("user");
+        String user = "Bienvenido \n" + usr;
+        txtUsr.setText(user);
 
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
