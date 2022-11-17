@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     
     public void buttonLoginClick(View view) {
 
-        ConexionSQLITE conn = new ConexionSQLITE(getApplicationContext(), "dbUsuario", null, 1);
+        ConexionSQLITE conn = new ConexionSQLITE(getApplicationContext(), "dbUsuario", null, 2);
         SQLiteDatabase db = conn.getWritableDatabase();
 
         String sql = "select * from usuario where user = '"+ txtUser.getText().toString() +"'";
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         if(!line.equals("")) {
             Intent i = new Intent(this, MainActivityMenu.class);
             i.putExtra("user", txtUser.getText().toString());
+            clearLogin();
             startActivity(i);
         } else {
             clearLogin();

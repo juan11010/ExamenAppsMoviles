@@ -18,11 +18,13 @@ public class ConexionSQLITE extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(tabla);
         sqLiteDatabase.execSQL("insert into usuario values ('root', 'toor', 'admin')");
+        sqLiteDatabase.execSQL("create table articulo (id int, nombre string, precio string, tipo string, descripcion string)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("drop table if exists usuario");
+        sqLiteDatabase.execSQL("drop table if exists articulo");
         onCreate(sqLiteDatabase);
     }
 }

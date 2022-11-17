@@ -3,6 +3,8 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,34 +33,48 @@ public class MainActivityCrear extends AppCompatActivity {
         txtTypeC = findViewById(R.id.editTextTipoC);
         txtDesC = findViewById(R.id.editTextDesC);
 
-        btnCrearC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
         btnCancelC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnCancelClick(view);
+                finish();
+            }
+        });
+
+        btnCrearC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnCreateClik(view);
             }
         });
     }
 
-    public void btnCancelClick(View v) {
-        Intent i = new Intent(this, MainActivityMenu.class);
-        startActivity(i);
-    }
-
     public void btnCreateClik(View v) {
-        clearCreate();
+        int index = ultimo();
+        ConexionSQLITE conn = new ConexionSQLITE(getApplicationContext(), "dbUsuario", null, 2);
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        String sql = "insert into articulo values ('"+ index +"', '"+ txtNameC.getText().toString() +"', '"+ txtPriceC.getText().toString() +"', '"+txtTypeC.getText().toString()+"', '"+txtDesC.getText().toString()+"')";
+        db.execSQL(sql);
+        finish();
     }
 
-    public void clearCreate() {
-        txtNameC.setText("");
-        txtPriceC.setText("");
-        txtTypeC.setText("");
-        txtDesC.setText("");
+    public int ultimo() {
+        ConexionSQLITE conn = new ConexionSQLITE(getApplicationContext(), "dbUsuario", null, 2);
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        String sql = "select count(*) total from articulo";
+        int index = 0;
+
+        try {
+            Cursor c = db.rawQuery(sql, null);
+            while(c.moveToNext()) {
+                index = Integer.parseInt(c.getString(0));
+            }
+            c.close();
+            db.close();
+        } catch (Exception ex) {
+            db.close();
+        }
+        return index;
     }
 }

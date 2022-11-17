@@ -29,15 +29,14 @@ public class MainActivityMenu extends AppCompatActivity {
         btnEliminar = findViewById(R.id.buttonEliminar);
         btnListar = findViewById(R.id.buttonListar);
 
-        // TODO Hacer que funcione en todos los casos
         String usr = getIntent().getStringExtra("user");
-        String user = "Bienvenido \n" + usr;
+        String user = "Bienvenido "+ usr;
         txtUsr.setText(user);
 
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonSalirClick(view);
+                finish();
             }
         });
 
@@ -70,28 +69,23 @@ public class MainActivityMenu extends AppCompatActivity {
         });
     }
 
-    public void buttonSalirClick(View v) {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
-
     public void buttonCrearClick(View v) {
-        Intent i = new Intent(this, MainActivityCrear.class);
+        Intent i = new Intent(getApplicationContext(), MainActivityCrear.class);
         startActivity(i);
     }
 
     public void buttonModificarClick(View v) {
-        Intent i = new Intent(this, MainActivityModificar.class);
+        Intent i = new Intent(getApplicationContext(), MainActivityModificar.class);
         startActivity(i);
     }
 
     public void buttonEliminarClick(View v) {
-        Intent i = new Intent(this, MainActivityEliminar.class);
+        Intent i = new Intent(getApplicationContext(), MainActivityEliminar.class);
         startActivity(i);
     }
 
     public void buttonListarClick(View v) {
-        Intent i = new Intent(this, MainActivityListar.class);
+        Intent i = new Intent(getApplicationContext(), MainActivityListar.class);
         startActivity(i);
     }
 }
